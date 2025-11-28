@@ -11,8 +11,12 @@ function RGBA(mainCode, props) {
         );
     const isNarrow = window.innerWidth / window.innerHeight < 1.1;
 
-    let canheight = fire.offsetHeight;
-    let canwidth = fire.offsetWidth;
+    // let canheight = fire.offsetHeight;
+    // let canwidth = fire.offsetWidth;
+
+    let canheight = fire.offsetHeight || window.innerHeight;
+    let canwidth = fire.offsetWidth || window.innerWidth;
+
     let gl = (this.gl = canvas.getContext("webgl"));
     let program = gl.createProgram();
     config.uniforms = config.uniforms || {};
@@ -127,17 +131,24 @@ function RGBA(mainCode, props) {
         h = fire.offsetHeight;
         this.newSize(w, h);
     });
+
+    // Всегда выполнить хотя бы ОДИН рендер
+    this.time([0]); // Начальное значение времени
     gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+    // Только если нужно анимировать — запускать цикл
     if (false !== config.loop) {
         let drawFrame = (t) => {
             this.time([t / 1000]);
             gl.drawArrays(gl.TRIANGLES, 0, 3);
-            // 🔽 Условие: продолжать анимацию ТОЛЬКО если НЕ мобильное и НЕ узкое
             if (!isMobile && !isNarrow) {
                 requestAnimationFrame(drawFrame);
             }
         };
-        requestAnimationFrame(drawFrame);
+        // Запускаем анимацию только если не мобильное и не узкое
+        if (!isMobile && !isNarrow) {
+            requestAnimationFrame(drawFrame);
+        }
     }
 }
 

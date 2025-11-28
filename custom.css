@@ -734,6 +734,9 @@ footer {
 
 /* === Мобильная адаптация: до 500px === */
 @media (max-width: 500px) {
+    body {
+        background-image: url("static.jpg");
+    }
     /* Header: увеличен до 30% высоты экрана */
     header {
         height: 32vh;
