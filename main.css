@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150vmax;
+    margin: 0;
+}
+
+/* Ограничение цветовой гаммы переливов */
+body {
+    background: linear-gradient(45deg, #002244, #003311);
+    background-size: 100vw 150vmax;
+    animation: bodyGradient 20s ease infinite;
+}
+
+.task,
+.task-name,
+.task-nic {
+    position: absolute;
+    font-weight: bold;
+    font-size: 5vmin;
+    text-decoration: none;
+}
+
+.task,
+.task-name,
+.task-nic {
+    top: 40vh;
+    color: #00ffff;
+}
+
+.task-name {
+    top: 50vh;
+    color: #aa66ff;
+}
+
+.task-nic {
+    top: 60vh;
+    color: #aa66ff;
+}
+
+.task:hover {
+    color: #88ff00;
+}
