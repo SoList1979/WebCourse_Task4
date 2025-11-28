@@ -638,13 +638,14 @@ footer {
     background: #00000099;
     width: 85%;
     max-width: 50vw;
-    max-height: 95vh;
+    max-height: 60vh;
     overflow-y: auto;
     border-radius: 2vmin;
     padding: 2.5rem;
     box-shadow: 0 4vmin 20vmin #000000aa, inset 1vmin 1vmin 2vmin #ff3300aa,
         inset -1vmin -1vmin 2vmin #ff3300aa;
     position: relative;
+    margin-top: 27vh;
     opacity: 0;
     transform: scale(0.9);
     animation: modalIn 0.4s ease-out forwards;
@@ -799,7 +800,8 @@ footer {
         background: #00000099;
         width: 85%;
         max-width: 95vw;
-        max-height: 95vh;
+        max-height: 60vh;
+        margin-top: 34vh;
     }
 
     section h3 {
@@ -847,5 +849,13 @@ footer {
 
     section {
         scroll-margin-top: calc(9rem + 2vh);
+    }
+
+    .modal-content {
+        background: #00000099;
+        width: 85%;
+        max-width: 95vw;
+        max-height: 60vh;
+        margin-top: calc(9rem + 2vh);
     }
 }
