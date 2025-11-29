@@ -439,14 +439,14 @@ p {
 }
 
 .monomyth-stages ol li::before {
-    content: counter(step-counter) ".";
+    content: counter(step-counter);
     position: absolute;
     left: 0;
     top: 0;
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.2rem;
+    height: 1.2rem;
     background: #ff330088;
-    border: 0.5vmin solid #ffff00;
+    border: 0.2vmin solid #ffff00;
     color: #ffff00;
     border-radius: 50%;
     display: flex;
@@ -658,7 +658,30 @@ footer {
 }
 
 .modal-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    position: sticky;
+    top: 0;
+    line-height: 1;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #00000000;
+    background: #ff330088;
+    border: 0.5vmin solid #ffff00;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-family: p-font;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: #ffff00;
 }
 
 @keyframes fadeIn {
@@ -679,44 +702,6 @@ footer {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-.modal-close {
-    position: absolute;
-    top: 2vmin;
-    right: 2vmin;
-    font-size: 6vmin;
-    line-height: 1;
-    width: 4vmin;
-    height: 4vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #00000000;
-    background: #ff330088;
-    border: 0.5vmin solid #ffff00;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    font-family: p-font;
-    z-index: 10;
-}
-
-.modal-close:hover {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.5rem;
-    font-size: 7vmin;
-    line-height: 1;
-    width: 4vmin;
-    height: 4vmin;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #00000000;
-    background: #ffff00;
-    border: 0.5vmin solid #ff330088;
 }
 
 /* === Анимация появления === */
